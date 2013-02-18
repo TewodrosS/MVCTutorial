@@ -9,13 +9,22 @@ namespace EsentialTools.Models
     {
         decimal ApplyDiscount(decimal totalParam);
     }
+
+
     public class DefaultDiscountHelper : IDiscountHelper
     {
-        public decimal DiscountSize { get; set; }
+        private decimal discountSize;
+
+        public DefaultDiscountHelper(decimal discountParam)
+        {
+            discountSize = discountParam;
+        }
 
         public decimal ApplyDiscount(decimal totalParam)
         {
-            return (totalParam - (DiscountSize / 100m * totalParam));
+            return (totalParam - (discountSize / 100m * totalParam));
         }
     }
+
+
 }
