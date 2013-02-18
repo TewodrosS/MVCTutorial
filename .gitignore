@@ -1,1 +1,4 @@
 # git ignore file
+*.suo
+*.user
+[Dd]ebug*/
